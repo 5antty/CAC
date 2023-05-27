@@ -1,0 +1,14 @@
+factorial: daddi $sp, $sp, -16
+sd $ra, 0($sp)
+sd $a0, 8($sp)
+daddi $a0, $a0, -1
+daddi $s2, $0, 1
+dmul $v1, $s0, $a0
+beq $s0, $s2, terminar
+jal factorial
+terminar:
+ld $ra, 0($sp)
+ld, $a0, 8($sp)
+dadd $v0, $0, $a0
+daddi $sp, $sp, 16
+jr $ra

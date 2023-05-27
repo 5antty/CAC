@@ -1,0 +1,8 @@
+
+a)La instruccion que genera los stalls es sd r2, A(r0), ya que quiere acceder al volor de r2 antes de que el valor se guardo por el load anterior.
+El tipo de stall es RAW
+El promedio de ciclos por instruccion es 2.2
+
+b)No presenta atasco ya que gracias al forwarding se guarda el valor en r2 antes de que lo necesite el store de la linea siguiente.
+El color de los registros indica que se cambio su valor.
+El CPI es 1.8
