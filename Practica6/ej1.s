@@ -25,9 +25,10 @@ daddi $t0, $0, 9 ; $t0 = 9 -> función 9: para leer un caracter
 sd $t0, 0($s0)
 lwu $t1, DATA(r0) ; $t1 = dirección de DATA
 lbu $t2, 0($t1)
-sb $t2, 0($a1)
+sb $t2, 0($a1) ;guardo el caracter leido
 nop
-daddi $a1, $a1, 1
-beqz $t2, finr
+daddi $t3, $0, 48 ; termina cuando tecleo 0 (30h)
+daddi $a1, $a1, 1 ;corrimiento en la cadena
+beq $t2, $t3, finr
 j loop
 finr: jr $ra
